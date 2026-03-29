@@ -1,7 +1,12 @@
 "use client"
 
+import { Suspense } from "react"
 import HomeClient from "./home-client"
 
 export default function HomePage() {
-  return <HomeClient />
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <HomeClient />
+    </Suspense>
+  )
 }
